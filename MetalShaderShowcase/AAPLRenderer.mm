@@ -222,7 +222,6 @@
     MTLRenderPassDescriptor *renderPassDescriptor = view.renderPassDescriptor;
     if (renderPassDescriptor)
     {
-        
         id <MTLRenderCommandEncoder> renderEncoder = [commandBuffer renderCommandEncoderWithDescriptor:renderPassDescriptor];
         [renderEncoder setDepthStencilState:_depthState];
         

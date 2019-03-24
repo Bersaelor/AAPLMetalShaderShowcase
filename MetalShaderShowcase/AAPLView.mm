@@ -106,6 +106,7 @@
                                                                                            height: texture.height
                                                                                         mipmapped: NO];
             desc.textureType = MTLTextureType2DMultisample;
+            desc.usage = MTLTextureUsageRenderTarget;
             
             // sample count was specified to the view by the renderer.
             // this must match the sample count given to any pipeline state using this render pass descriptor
@@ -146,6 +147,8 @@
                                                                                         mipmapped: NO];
             
             desc.textureType = (_sampleCount > 1) ? MTLTextureType2DMultisample : MTLTextureType2D;
+            desc.usage = MTLTextureUsageRenderTarget;
+
             desc.sampleCount = _sampleCount;
             
             _depthTex = [_device newTextureWithDescriptor: desc];
